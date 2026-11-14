@@ -1,0 +1,155 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-ui: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: "Caveat", "Kalam", cursive;
+  --font-devanagari-accent: "Yatra One", "Noto Sans Devanagari", serif;
+  --font-devanagari: "Noto Sans Devanagari", "Cormorant Garamond", serif;
+}
+
+:root {
+  --yaad-plum: #3E1230;
+  --yaad-charcoal: #1E1E1E;
+  --yaad-cream: #FAF6F0;
+  --yaad-blush: #FFF7F5;
+  --yaad-gold: #C9A35B;
+  --yaad-rose: #B5767C;
+  --yaad-vermilion: #D9482B;
+  --yaad-marigold: #E8A317;
+  --yaad-leaf: #3E7B3A;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #FAF6F0;
+  color: var(--yaad-plum);
+}
+
+body {
+  font-family: var(--font-serif);
+  font-variant-numeric: lining-nums;
+  overflow-x: hidden;
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+.font-editorial {
+  font-family: var(--font-serif);
+  font-variant-numeric: lining-nums;
+}
+
+.font-couple {
+  font-family: var(--font-script);
+  font-weight: 700;
+}
+
+.font-invite-detail {
+  font-family: var(--font-serif);
+  font-variant-numeric: lining-nums;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+}
+
+.font-hindi-accent {
+  font-family: var(--font-devanagari-accent);
+}
+
+.font-hindi {
+  font-family: var(--font-devanagari);
+}
+
+/* Warm textured off-white/ivory cotton invitation card grain */
+.paper-grain {
+  background-image:
+    radial-gradient(rgba(30, 30, 30, 0.03) 1px, transparent 0),
+    radial-gradient(rgba(201, 163, 91, 0.06) 1px, transparent 0),
+    radial-gradient(rgba(217, 72, 43, 0.03) 1px, transparent 0);
+  background-size: 24px 24px, 32px 32px, 18px 18px;
+  background-position: 0 0, 12px 12px, 6px 16px;
+}
+
+/* 3D Page Flip Perspective */
+.album-perspective {
+  perspective: 1800px;
+}
+
+.album-leaf {
+  transform-style: preserve-3d;
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  transform-origin: left center;
+}
+
+.album-face {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.album-face-back {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+}
+
+/* Marigold garland gentle sway */
+@keyframes garlandSway {
+  0%, 100% {
+    transform: rotate(-1.6deg);
+  }
+  50% {
+    transform: rotate(1.6deg);
+  }
+}
+
+.animate-garland {
+  transform-origin: top center;
+  animation: garlandSway 5.5s ease-in-out infinite;
+}
+
+@keyframes petalFloat {
+  0% {
+    transform: translateY(-10px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  85% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateY(110px) translateX(18px) rotate(140deg);
+    opacity: 0;
+  }
+}
+
+.animate-petal {
+  animation: petalFloat 6s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-garland,
+  .animate-petal {
+    animation: none !important;
+  }
+  .album-leaf {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Print card styling */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-card-only {
+    box-shadow: none !important;
+    margin: 0 auto !important;
+  }
+}

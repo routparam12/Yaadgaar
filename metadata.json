@@ -1,0 +1,6 @@
+{
+  "name": "Yaadgaar",
+  "description": "Live-stream Indian weddings and sacred ceremonies, preserve them forever in chaptered archives, invite guests via QR shaadi cards, and bind memories into a page-flip digital photo book.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
