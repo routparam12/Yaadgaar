@@ -12,7 +12,7 @@ export const ASSET_IMAGES = {
   mehendi: '/src/assets/images/anime_mehendi_garden_1794675234782.jpg',
   sangeet: '/src/assets/images/anime_sangeet_dance_1794675235362.jpg',
   pheras: '/src/assets/images/anime_pheras_blessing_1794675236848.jpg',
-  ganesh: '/assets/aistudio/image_56c5dcae.png',
+  ganesh: '/src/assets/images/ganesha_gold_ivory_1794680087655.jpg',
 };
 
 const DEFAULT_CHAPTERS: CeremonyChapter[] = [

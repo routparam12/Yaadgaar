@@ -22,7 +22,7 @@ export const ScrollCircleIndicator: React.FC<ScrollCircleIndicatorProps> = ({
       type="button"
       onClick={onNext}
       aria-label={`Section ${activeIndex + 1} of ${total}. Scroll to next section`}
-      className="no-print fixed bottom-6 right-6 z-30 flex h-14 w-14 items-center justify-center rounded-full bg-[#F6EBDD]/95 border border-[#B5767C]/45 text-[#3E1230] shadow-md hover:scale-105 transition-transform cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3E1230]"
+      className="no-print fixed bottom-6 right-6 z-30 hidden md:flex h-14 w-14 items-center justify-center rounded-full bg-[#FAF6F0]/95 border border-[#8A2E52]/30 text-[#3E1230] shadow-md hover:scale-105 transition-transform cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3E1230]"
     >
       <svg
         width="56"

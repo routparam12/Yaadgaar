@@ -103,20 +103,20 @@ export const PhotoBookScreen: React.FC<PhotoBookScreenProps> = ({ event }) => {
   return (
     <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 py-8 sm:py-12">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#B5767C]/35 pb-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#3E1230]/15 pb-6">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-[#B5767C] font-medium">
+          <p className="font-ui text-[13px] sm:text-[14px] text-[#8A2E52] font-semibold">
             Digital Wedding Photo Book · {photos.length} Photos Bound
           </p>
-          <h1 className="mt-2 font-editorial text-3xl sm:text-5xl uppercase tracking-[0.15em] text-[#1E1E1E]">
-            {event.coupleNames} — Heirloom Album
+          <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-[-0.01em] leading-[1.08] text-[#3E1230]">
+            {event.coupleNames} — Wedding Album
           </h1>
         </div>
 
         <button
           type="button"
           onClick={handleDownloadPdf}
-          className="font-ui inline-flex items-center gap-2 rounded-full px-5 py-2.5 bg-[#181216] text-white text-[13px] font-medium hover:bg-[#3E1230] cursor-pointer whitespace-nowrap shrink-0"
+          className="font-ui inline-flex items-center gap-2 rounded-full px-5 py-2.5 bg-[#3E1230] text-[#FAF6F0] text-sm font-medium hover:bg-[#571A43] cursor-pointer whitespace-nowrap shrink-0"
         >
           <Download className="h-4 w-4" aria-hidden="true" />
           <span>Download Album PDF</span>
@@ -144,7 +144,7 @@ export const PhotoBookScreen: React.FC<PhotoBookScreenProps> = ({ event }) => {
               onClick={() =>
                 handleConnectCloud(folder.provider as 'google-drive' | 'dropbox')
               }
-              className="font-ui rounded-full px-3.5 py-1.5 text-xs font-medium border border-[#1E1E1E]/25 text-[#141414] hover:bg-[#181216] hover:text-white transition-colors cursor-pointer whitespace-nowrap shrink-0"
+              className="font-ui rounded-full px-4 py-1.5 text-xs sm:text-sm font-medium border-[1.5px] border-[#3E1230] text-[#3E1230] hover:bg-[#3E1230] hover:text-[#FAF6F0] transition-colors cursor-pointer whitespace-nowrap shrink-0"
             >
               {folder.connected ? 'Sync More' : 'Connect'}
             </button>
@@ -173,7 +173,7 @@ export const PhotoBookScreen: React.FC<PhotoBookScreenProps> = ({ event }) => {
           <button
             type="button"
             onClick={() => fileInputRef.current?.click()}
-            className="font-ui inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs bg-[#C9A35B] text-[#141414] font-medium hover:bg-[#D7B36C] cursor-pointer whitespace-nowrap shrink-0"
+            className="font-ui inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 text-xs bg-[#C9A35B] text-[#3E1230] font-semibold hover:bg-[#D7B36C] cursor-pointer whitespace-nowrap shrink-0"
           >
             <ImagePlus className="h-3.5 w-3.5" aria-hidden="true" />
             <span>Upload</span>
@@ -223,7 +223,7 @@ export const PhotoBookScreen: React.FC<PhotoBookScreenProps> = ({ event }) => {
                     “Every garland, every mantra, every tear of joy — bound together so our grandchildren can turn these pages.”
                   </p>
                   <span className="mt-6 inline-block h-px w-16 bg-[#B5767C]" />
-                  <p className="mt-3 text-xs uppercase tracking-[0.18em] text-[#B5767C]">
+                  <p className="mt-3 text-xs uppercase tracking-[0.18em] text-[#8A2E52]">
                     Turn the page to begin
                   </p>
                 </div>
@@ -232,10 +232,10 @@ export const PhotoBookScreen: React.FC<PhotoBookScreenProps> = ({ event }) => {
               <>
                 <div className="p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#B5767C]/35 bg-white">
                   <div>
-                    <p className="text-xs uppercase tracking-[0.2em] text-[#B5767C]">
+                    <p className="text-xs uppercase tracking-[0.2em] text-[#8A2E52]">
                       {currentSpread.title}
                     </p>
-                    <h2 className="mt-2 font-editorial text-3xl uppercase tracking-[0.16em] text-[#1E1E1E]">
+                    <h2 className="mt-2 font-display text-3xl font-semibold tracking-[-0.01em] text-[#3E1230]">
                       To Our Parivaar
                     </h2>
                     <label
@@ -287,7 +287,7 @@ export const PhotoBookScreen: React.FC<PhotoBookScreenProps> = ({ event }) => {
                     >
                       {photo ? (
                         <div>
-                          <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.16em] text-[#B5767C] mb-3">
+                          <div className="flex items-center justify-between text-[11px] uppercase tracking-[0.16em] text-[#8A2E52] mb-3">
                             <span>{photo.ceremony}</span>
                             <span>{photo.dateTaken}</span>
                           </div>
@@ -327,13 +327,13 @@ export const PhotoBookScreen: React.FC<PhotoBookScreenProps> = ({ event }) => {
             type="button"
             onClick={() => goToSpread(spreadIndex - 1)}
             disabled={spreadIndex === 0}
-            className="inline-flex items-center gap-2 rounded-full px-4 py-2 border border-[#1E1E1E]/25 bg-white text-[#141414] text-[13px] font-medium disabled:opacity-35 cursor-pointer disabled:cursor-not-allowed"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2 border-[1.5px] border-[#3E1230] bg-transparent text-[#3E1230] text-sm font-medium disabled:opacity-35 cursor-pointer disabled:cursor-not-allowed"
           >
             <ChevronLeft className="h-4 w-4" aria-hidden="true" />
             <span>Previous Page</span>
           </button>
 
-          <div className="flex items-center gap-2 text-xs text-[#3E1230] tabular-nums">
+          <div className="flex items-center gap-2 text-sm text-[#4A2A3E] tabular-nums">
             <span>
               Spread {spreadIndex + 1} of {spreads.length}
             </span>
@@ -343,7 +343,7 @@ export const PhotoBookScreen: React.FC<PhotoBookScreenProps> = ({ event }) => {
             type="button"
             onClick={() => goToSpread(spreadIndex + 1)}
             disabled={spreadIndex === spreads.length - 1}
-            className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-[#181216] text-white text-[13px] font-medium disabled:opacity-35 cursor-pointer disabled:cursor-not-allowed"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2 bg-[#3E1230] text-[#FAF6F0] text-sm font-medium hover:bg-[#571A43] disabled:opacity-35 cursor-pointer disabled:cursor-not-allowed"
           >
             <span>Next Page</span>
             <ChevronRight className="h-4 w-4" aria-hidden="true" />

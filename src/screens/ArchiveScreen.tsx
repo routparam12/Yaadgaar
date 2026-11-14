@@ -43,14 +43,14 @@ export const ArchiveScreen: React.FC<ArchiveScreenProps> = ({
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#B5767C]/35 pb-6">
         <div>
-          <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-[#3E7B3A] font-semibold">
+          <div className="inline-flex items-center gap-2 font-ui text-sm text-[#3E7B3A] font-semibold">
             <ShieldCheck className="h-4 w-4" aria-hidden="true" />
             <span>Preserved Forever · Hamesha Ke Liye</span>
           </div>
-          <h1 className="mt-2 font-editorial text-3xl sm:text-5xl uppercase tracking-[0.15em] text-[#1E1E1E]">
+          <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-[-0.01em] leading-[1.08] text-[#3E1230]">
             {event.coupleNames} — Forever Archive
           </h1>
-          <p className="mt-1 font-editorial text-xs sm:text-sm uppercase tracking-[0.18em] text-[#1E1E1E]/75">
+          <p className="mt-1.5 font-ui text-sm sm:text-base text-[#4A2A3E]">
             {event.dateFormatted} · {event.venue}, {event.city}
           </p>
         </div>
@@ -59,7 +59,7 @@ export const ArchiveScreen: React.FC<ArchiveScreenProps> = ({
           <button
             type="button"
             onClick={handleCopy}
-            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium border border-[#1E1E1E]/25 bg-white text-[#141414] hover:border-[#1E1E1E] cursor-pointer whitespace-nowrap shrink-0"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-medium border-[1.5px] border-[#3E1230] bg-transparent text-[#3E1230] hover:bg-[#3E1230]/8 cursor-pointer whitespace-nowrap shrink-0"
           >
             {copied ? (
               <Check className="h-3.5 w-3.5 text-[#3E7B3A]" aria-hidden="true" />
@@ -72,10 +72,10 @@ export const ArchiveScreen: React.FC<ArchiveScreenProps> = ({
           <button
             type="button"
             onClick={onOpenAlbum}
-            className="inline-flex items-center gap-2 rounded-full px-4 py-2 text-[13px] font-medium bg-[#181216] text-white hover:bg-[#3E1230] cursor-pointer whitespace-nowrap shrink-0"
+            className="inline-flex items-center gap-2 rounded-full px-5 py-2 text-sm font-medium bg-[#3E1230] text-[#FAF6F0] hover:bg-[#571A43] cursor-pointer whitespace-nowrap shrink-0"
           >
             <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
-            <span>Open Photo Book</span>
+            <span>Album kholo</span>
           </button>
         </div>
       </div>
@@ -162,11 +162,11 @@ export const ArchiveScreen: React.FC<ArchiveScreenProps> = ({
 
         {/* Chapters Selector + Nostalgic Leaf Frame Preview */}
         <div className="lg:col-span-5 space-y-6">
-          <div className="border border-[#B5767C]/40 bg-white p-5">
-            <h2 className="font-editorial text-2xl uppercase tracking-[0.15em] text-[#1E1E1E]">
+          <div className="rounded-2xl border border-[#3E1230]/15 bg-white p-5">
+            <h2 className="font-display text-2xl font-semibold tracking-[-0.01em] text-[#3E1230]">
               Ceremony Chapters
             </h2>
-            <p className="font-editorial italic text-sm text-[#3E1230]/75 mt-1 tracking-normal">
+            <p className="font-ui text-sm text-[#4A2A3E] mt-1">
               Jump straight to any sacred rasam from the wedding week.
             </p>
 
@@ -190,7 +190,7 @@ export const ArchiveScreen: React.FC<ArchiveScreenProps> = ({
                     <div>
                       <p
                         className={`text-[11px] uppercase tracking-[0.16em] ${
-                          isSelected ? 'text-[#C9A35B]' : 'text-[#B5767C]'
+                          isSelected ? 'text-[#C9A35B]' : 'text-[#8A2E52]'
                         }`}
                       >
                         0{idx + 1} · {chapter.ceremony}
@@ -209,13 +209,13 @@ export const ArchiveScreen: React.FC<ArchiveScreenProps> = ({
             </div>
           </div>
 
-          <MughalArchFrame accentColor="#3E7B3A" showGarlands={false}>
-            <div className="text-center py-2">
-              <p className="text-xs uppercase tracking-[0.18em] text-[#3E7B3A] font-semibold">
-                Family Heirloom Promise
+          <MughalArchFrame variant="closing" accentColor="#3E7B3A">
+            <div className="bg-[#DFF1D2] text-center py-6 px-5">
+              <p className="font-ui text-xs sm:text-sm text-[#244B21] font-semibold">
+                Pheras ek baar hote hain. Dekhna jitni baar chaho.
               </p>
-              <p className="mt-2 font-editorial italic text-xl text-[#3E1230]">
-                “Waqt guzar jaata hai, par pheras ke geet sada saath rehte hain.”
+              <p className="mt-2 font-display italic text-xl text-[#3E1230]">
+                “Waqt guzar jaata hai, par pheras ke geet aur apno ki hansi sada saath rehti hai.”
               </p>
             </div>
           </MughalArchFrame>

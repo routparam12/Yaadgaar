@@ -59,7 +59,7 @@ interface MagneticDiyaButtonProps {
   children: React.ReactNode;
   onClick: () => void;
   showDiyaOnHover?: boolean;
-  variant?: 'plum' | 'gold' | 'outline';
+  variant?: 'plum' | 'orange' | 'gold' | 'outline';
   className?: string;
 }
 
@@ -92,10 +92,12 @@ export const MagneticDiyaButton: React.FC<MagneticDiyaButtonProps> = ({
 
   const baseStyles =
     variant === 'plum'
-      ? 'bg-[#181216] text-white hover:bg-[#3E1230] shadow-[0_6px_18px_rgba(24,18,22,0.18)]'
-      : variant === 'gold'
-        ? 'bg-[#C9A35B] text-[#181216] hover:bg-[#D7B36C]'
-        : 'border border-[#1E1E1E]/25 bg-white text-[#141414] hover:border-[#1E1E1E]';
+      ? 'bg-[#3E1230] text-[#FAF6F0] hover:bg-[#571A43] shadow-[0_8px_22px_rgba(62,18,48,0.20)]'
+      : variant === 'orange'
+        ? 'bg-[#C8431A] text-[#FAF6F0] hover:bg-[#AA3714] shadow-[0_8px_22px_rgba(200,67,26,0.22)]'
+        : variant === 'gold'
+          ? 'bg-[#C9A35B] text-[#3E1230] hover:bg-[#D7B36C]'
+          : 'border-[1.5px] border-[#3E1230] bg-transparent text-[#3E1230] hover:bg-[#3E1230]/8';
 
   return (
     <button
@@ -105,7 +107,7 @@ export const MagneticDiyaButton: React.FC<MagneticDiyaButtonProps> = ({
       onMouseEnter={() => setHovered(true)}
       onMouseMove={handleMouseMove}
       onMouseLeave={resetTransform}
-      className={`font-ui inline-flex items-center gap-2.5 rounded-full px-6 py-2.5 text-[13.5px] font-medium tracking-normal transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9A35B] ${baseStyles} ${className}`}
+      className={`font-ui inline-flex items-center gap-2.5 rounded-full px-6 py-3 text-[15px] font-medium tracking-normal transition-all duration-200 cursor-pointer whitespace-nowrap shrink-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C9A35B] ${baseStyles} ${className}`}
     >
       {showDiyaOnHover && (
         <svg
@@ -116,18 +118,16 @@ export const MagneticDiyaButton: React.FC<MagneticDiyaButtonProps> = ({
           aria-hidden="true"
           className="transition-transform duration-200"
         >
-          {/* Brass diya bowl */}
           <path
             d="M4 15 C4 19, 8 21, 12 21 C16 21, 20 19, 20 15 Z"
-            fill="#C9A35B"
+            fill="#F5A623"
             stroke="currentColor"
             strokeWidth="1.2"
           />
-          {/* Flame lights warmly on hover */}
           <path
             d="M12 4 C10.5 7, 9.5 9.5, 10.5 12 C11.2 13.5, 12.8 13.5, 13.5 12 C14.5 9.5, 13.5 7, 12 4 Z"
-            fill={hovered ? '#E8A317' : 'transparent'}
-            stroke={hovered ? '#D9482B' : 'currentColor'}
+            fill={hovered ? '#F5A623' : 'transparent'}
+            stroke={hovered ? '#F26B21' : 'currentColor'}
             strokeWidth="1.2"
             style={{
               transition: 'fill 180ms ease, transform 180ms ease',

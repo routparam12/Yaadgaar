@@ -165,14 +165,14 @@ export const QrInviteScreen: React.FC<QrInviteScreenProps> = ({
 
   return (
     <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 py-8 sm:py-12">
-      <div className="no-print border-b border-[#B5767C]/35 pb-6">
-        <p className="font-invite-detail text-xs text-[#B5767C] font-semibold">
+      <div className="no-print border-b border-[#3E1230]/15 pb-6">
+        <p className="font-ui text-[13px] sm:text-[14px] text-[#8A2E52] font-semibold">
           Shagun Card &amp; In-App Scanner
         </p>
-        <h1 className="mt-2 font-editorial text-3xl sm:text-5xl uppercase tracking-[0.15em] text-[#1E1E1E]">
-          A QR on the Card. A World at the Ceremony.
+        <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-[-0.01em] leading-[1.08] text-[#3E1230]">
+          Card par ek chhota QR. Poora parivaar mandap mein.
         </h1>
-        <p className="mt-2 max-w-2xl font-editorial italic text-base sm:text-lg text-[#3E1230]/85">
+        <p className="mt-2 max-w-2xl font-ui text-base sm:text-lg text-[#4A2A3E]">
           Download the custom QR code as PNG or SVG for your printed shaadi card, or test scanning an invitation right inside Yaadgaar.
         </p>
       </div>
@@ -181,9 +181,9 @@ export const QrInviteScreen: React.FC<QrInviteScreenProps> = ({
         {/* Left: Printable Shaadi Card Preview + Downloads */}
         <div className="lg:col-span-6 space-y-5">
           <div className="print-card-only">
-            <MughalArchFrame accentColor="#D9482B">
-              <div className="bg-[#FAF6F0] p-7 sm:p-10 text-center border border-[#C9A35B]/45 paper-grain">
-                <p className="font-editorial text-sm sm:text-base uppercase tracking-[0.22em] text-[#1E1E1E]">
+            <MughalArchFrame variant="shaadi-card" accentColor="#E8467C">
+              <div className="bg-[#FAF6F0] p-7 sm:p-10 text-center paper-grain">
+                <p className="font-display text-sm sm:text-base uppercase tracking-[0.22em] text-[#3E1230]">
                   SAVE
                 </p>
                 <p className="font-couple text-2xl sm:text-3xl text-[#1E1E1E] -my-1">
@@ -236,7 +236,7 @@ export const QrInviteScreen: React.FC<QrInviteScreenProps> = ({
             <button
               type="button"
               onClick={handleDownloadPng}
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-[#181216] text-white text-[13px] font-medium hover:bg-[#3E1230] cursor-pointer whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2 bg-[#3E1230] text-[#FAF6F0] text-sm font-medium hover:bg-[#571A43] cursor-pointer whitespace-nowrap shrink-0"
             >
               <Download className="h-3.5 w-3.5" aria-hidden="true" />
               <span>Download PNG</span>
@@ -244,7 +244,7 @@ export const QrInviteScreen: React.FC<QrInviteScreenProps> = ({
             <button
               type="button"
               onClick={handleDownloadSvg}
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 border border-[#1E1E1E]/25 bg-white text-[#141414] text-[13px] font-medium hover:border-[#1E1E1E] cursor-pointer whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2 border-[1.5px] border-[#3E1230] bg-transparent text-[#3E1230] text-sm font-medium hover:bg-[#3E1230]/8 cursor-pointer whitespace-nowrap shrink-0"
             >
               <Download className="h-3.5 w-3.5" aria-hidden="true" />
               <span>Download SVG</span>
@@ -252,7 +252,7 @@ export const QrInviteScreen: React.FC<QrInviteScreenProps> = ({
             <button
               type="button"
               onClick={() => window.print()}
-              className="inline-flex items-center gap-2 rounded-full px-4 py-2 border border-[#B5767C]/50 bg-white text-[#141414] text-[13px] font-medium hover:border-[#1E1E1E] cursor-pointer whitespace-nowrap shrink-0"
+              className="inline-flex items-center gap-2 rounded-full px-5 py-2 border-[1.5px] border-[#3E1230] bg-transparent text-[#3E1230] text-sm font-medium hover:bg-[#3E1230]/8 cursor-pointer whitespace-nowrap shrink-0"
             >
               <Printer className="h-3.5 w-3.5" aria-hidden="true" />
               <span>Print Card Snippet</span>
@@ -261,9 +261,9 @@ export const QrInviteScreen: React.FC<QrInviteScreenProps> = ({
         </div>
 
         {/* Right: Camera QR Scanner + Accessible Event Code Fallback */}
-        <div className="no-print lg:col-span-6 border border-[#B5767C]/45 bg-white p-6 space-y-6">
+        <div className="no-print lg:col-span-6 rounded-2xl border border-[#3E1230]/15 bg-white p-6 space-y-6">
           <div>
-            <h2 className="font-editorial text-2xl uppercase tracking-[0.1em] text-[#3E1230]">
+            <h2 className="font-display text-2xl font-semibold tracking-[-0.01em] text-[#3E1230]">
               In-App QR Scanner
             </h2>
             <p className="mt-1 text-xs text-[#3E1230]/75">
@@ -304,7 +304,7 @@ export const QrInviteScreen: React.FC<QrInviteScreenProps> = ({
                   <button
                     type="button"
                     onClick={startCameraScanner}
-                    className="inline-flex items-center gap-2 rounded-full bg-[#C9A35B] text-[#141414] px-5 py-2 text-[13px] font-semibold hover:bg-[#D7B36C] cursor-pointer"
+                    className="inline-flex items-center gap-2 rounded-full bg-[#C9A35B] text-[#3E1230] px-5 py-2 text-[13px] font-semibold hover:bg-[#D7B36C] cursor-pointer"
                   >
                     <Camera className="h-4 w-4" aria-hidden="true" />
                     <span>Open Camera Scanner</span>
@@ -350,7 +350,7 @@ export const QrInviteScreen: React.FC<QrInviteScreenProps> = ({
               />
               <button
                 type="submit"
-                className="font-ui rounded-full px-5 py-2 bg-[#181216] text-white text-[13px] font-medium hover:bg-[#3E1230] cursor-pointer whitespace-nowrap shrink-0"
+                className="font-ui rounded-full px-5 py-2 bg-[#3E1230] text-[#FAF6F0] text-sm font-medium hover:bg-[#571A43] cursor-pointer whitespace-nowrap shrink-0"
               >
                 Open Ceremony
               </button>

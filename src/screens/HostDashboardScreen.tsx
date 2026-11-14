@@ -124,12 +124,12 @@ export const HostDashboardScreen: React.FC<HostDashboardScreenProps> = ({
   return (
     <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-8 py-8 sm:py-12">
       {/* Header + Event Selector */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#B5767C]/35 pb-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#3E1230]/15 pb-6">
         <div>
-          <p className="text-xs uppercase tracking-[0.2em] text-[#B5767C] font-medium">
+          <p className="font-ui text-[13px] sm:text-[14px] text-[#8A2E52] font-semibold">
             Host Studio · Manage Ceremonies & QR Invites
           </p>
-          <h1 className="mt-2 font-editorial text-3xl sm:text-5xl uppercase tracking-[0.15em] text-[#1E1E1E]">
+          <h1 className="mt-2 font-display text-3xl sm:text-5xl font-semibold tracking-[-0.01em] leading-[1.08] text-[#3E1230]">
             Parivaar Host Dashboard
           </h1>
         </div>
@@ -156,7 +156,7 @@ export const HostDashboardScreen: React.FC<HostDashboardScreenProps> = ({
       {/* Live Overview Strip */}
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
         <div className="border border-[#B5767C]/40 bg-white p-5">
-          <p className="text-xs uppercase tracking-[0.16em] text-[#B5767C]">
+          <p className="text-xs uppercase tracking-[0.16em] text-[#8A2E52]">
             Live Viewers
           </p>
           <p className="mt-2 font-editorial text-4xl font-semibold text-[#3E1230] tabular-nums inline-flex items-center gap-2">
@@ -166,7 +166,7 @@ export const HostDashboardScreen: React.FC<HostDashboardScreenProps> = ({
         </div>
 
         <div className="border border-[#B5767C]/40 bg-white p-5">
-          <p className="text-xs uppercase tracking-[0.16em] text-[#B5767C]">
+          <p className="text-xs uppercase tracking-[0.16em] text-[#8A2E52]">
             Blessings Received
           </p>
           <p className="mt-2 font-editorial text-4xl font-semibold text-[#3E1230] tabular-nums inline-flex items-center gap-2">
@@ -212,12 +212,12 @@ export const HostDashboardScreen: React.FC<HostDashboardScreenProps> = ({
 
       {/* Main Split: Create Event Form + Live Guest Wishes & Quick Launch */}
       <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        <section className="lg:col-span-6 border border-[#B5767C]/45 bg-white p-6">
-          <h2 className="font-editorial text-2xl uppercase tracking-[0.15em] text-[#1E1E1E] flex items-center gap-2">
-            <CalendarPlus className="h-5 w-5 text-[#C9A35B]" aria-hidden="true" />
+        <section className="lg:col-span-6 rounded-2xl border border-[#3E1230]/15 bg-white p-6">
+          <h2 className="font-display text-2xl font-semibold tracking-[-0.01em] text-[#3E1230] flex items-center gap-2">
+            <CalendarPlus className="h-5 w-5 text-[#F26B21]" aria-hidden="true" />
             <span>Create New Ceremony Space</span>
           </h2>
-          <p className="mt-1 font-editorial italic text-sm text-[#3E1230]/80 tracking-normal">
+          <p className="mt-1 font-ui text-sm text-[#4A2A3E]">
             Generate a fresh livestream room, ceremony schedule, and printable shaadi card QR.
           </p>
 
@@ -346,24 +346,24 @@ export const HostDashboardScreen: React.FC<HostDashboardScreenProps> = ({
 
             <button
               type="submit"
-              className="font-ui w-full rounded-full bg-[#181216] text-white py-2.5 text-[13.5px] font-medium hover:bg-[#3E1230] cursor-pointer"
+              className="font-ui w-full rounded-full bg-[#3E1230] text-[#FAF6F0] py-2.5 text-sm font-medium hover:bg-[#571A43] cursor-pointer"
             >
-              Launch Ceremony &amp; Generate QR
+              Apni shaadi yahan dikhao
             </button>
           </form>
         </section>
 
         {/* Right: Active Event Wishes & Actions */}
-        <section className="lg:col-span-6 border border-[#B5767C]/45 bg-white p-6 space-y-5">
+        <section className="lg:col-span-6 rounded-2xl border border-[#3E1230]/15 bg-white p-6 space-y-5">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <h2 className="font-editorial text-2xl uppercase tracking-[0.15em] text-[#1E1E1E]">
+            <h2 className="font-display text-2xl font-semibold tracking-[-0.01em] text-[#3E1230]">
               Recent Guest Wishes ({activeEvent.coupleNames})
             </h2>
             <div className="font-ui flex gap-2">
               <button
                 type="button"
                 onClick={onOpenLive}
-                className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 bg-[#D9482B] text-white text-xs font-medium cursor-pointer"
+                className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 bg-[#C8431A] text-[#FAF6F0] text-xs sm:text-sm font-medium hover:bg-[#AA3714] cursor-pointer"
               >
                 <Radio className="h-3.5 w-3.5" aria-hidden="true" />
                 <span>Open Live</span>
@@ -371,7 +371,7 @@ export const HostDashboardScreen: React.FC<HostDashboardScreenProps> = ({
               <button
                 type="button"
                 onClick={onOpenQr}
-                className="inline-flex items-center gap-1.5 rounded-full px-3.5 py-1.5 border border-[#1E1E1E]/25 text-[#141414] text-xs font-medium cursor-pointer"
+                className="inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 border-[1.5px] border-[#3E1230] text-[#3E1230] text-xs sm:text-sm font-medium hover:bg-[#3E1230]/8 cursor-pointer"
               >
                 <QrCode className="h-3.5 w-3.5" aria-hidden="true" />
                 <span>Card QR</span>
@@ -394,7 +394,7 @@ export const HostDashboardScreen: React.FC<HostDashboardScreenProps> = ({
                     <span>
                       {w.author} · {w.relation}
                     </span>
-                    <span className="font-normal text-[#B5767C]">{w.createdAt}</span>
+                    <span className="font-normal text-[#8A2E52]">{w.createdAt}</span>
                   </div>
                   <p className="text-[11px] text-[#3E1230]/70">{w.city}</p>
                   <p className="mt-1.5 text-sm text-[#3E1230]/90">“{w.message}”</p>

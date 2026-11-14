@@ -181,7 +181,7 @@ export const EventLiveScreen: React.FC<EventLiveScreenProps> = ({
               <span>Now Live · {event.activeCeremony}</span>
             </span>
             <span className="inline-flex items-center gap-1.5 text-[#3E1230] font-medium tabular-nums">
-              <Eye className="h-3.5 w-3.5 text-[#B5767C]" aria-hidden="true" />
+              <Eye className="h-3.5 w-3.5 text-[#8A2E52]" aria-hidden="true" />
               <span>{formatViewerCount(viewerCount)} parivaar watching</span>
             </span>
           </div>
@@ -189,8 +189,8 @@ export const EventLiveScreen: React.FC<EventLiveScreenProps> = ({
           <h1 className="mt-3 font-couple text-5xl sm:text-6xl text-[#1E1E1E]">
             {event.coupleNames}
           </h1>
-          <p className="mt-1 flex items-center gap-2 font-editorial text-xs sm:text-sm uppercase tracking-[0.16em] text-[#1E1E1E]/75">
-            <MapPin className="h-3.5 w-3.5 text-[#B5767C]" aria-hidden="true" />
+          <p className="mt-1.5 flex items-center gap-2 font-ui text-sm font-medium text-[#4A2A3E]">
+            <MapPin className="h-4 w-4 text-[#8A2E52]" aria-hidden="true" />
             <span>
               {event.venue} · {event.city} · {event.dateFormatted}
             </span>
@@ -201,14 +201,14 @@ export const EventLiveScreen: React.FC<EventLiveScreenProps> = ({
           <button
             type="button"
             onClick={onOpenQr}
-            className="rounded-full px-4 py-2 text-[13px] font-medium border border-[#1E1E1E]/25 bg-white text-[#141414] hover:border-[#1E1E1E] cursor-pointer whitespace-nowrap shrink-0"
+            className="rounded-full px-5 py-2 text-sm font-medium border-[1.5px] border-[#3E1230] bg-transparent text-[#3E1230] hover:bg-[#3E1230]/8 cursor-pointer whitespace-nowrap shrink-0"
           >
             Share Card QR
           </button>
           <button
             type="button"
             onClick={onOpenArchive}
-            className="rounded-full px-4 py-2 text-[13px] font-medium bg-[#181216] text-white hover:bg-[#3E1230] cursor-pointer whitespace-nowrap shrink-0"
+            className="rounded-full px-5 py-2 text-sm font-medium bg-[#3E1230] text-[#FAF6F0] hover:bg-[#571A43] cursor-pointer whitespace-nowrap shrink-0"
           >
             View Chapters
           </button>
@@ -332,21 +332,21 @@ export const EventLiveScreen: React.FC<EventLiveScreenProps> = ({
               </p>
             </div>
 
-            <div className="sm:col-span-5">
-              <MughalArchFrame showGarlands={false} showGathbandhan={false}>
+            <div className="sm:col-span-5 h-56 sm:h-64">
+              <MughalArchFrame variant="closing" accentColor="#F5A623">
                 <img
                   src={ASSET_IMAGES.mandapCouple}
                   alt={`Illustrated portrait of ${event.coupleNames}`}
                   referrerPolicy="no-referrer"
-                  className="aspect-[3/4] w-full object-cover"
+                  className="h-56 sm:h-64 w-full object-cover"
                 />
               </MughalArchFrame>
             </div>
           </section>
 
-          {/* Rock & Sharon inspired Ceremony Schedule Strip */}
-          <section className="border border-[#B5767C]/40 bg-white p-6">
-            <h2 className="font-editorial text-2xl uppercase tracking-[0.16em] text-[#1E1E1E] text-center">
+          {/* Ceremony Schedule Strip */}
+          <section className="rounded-2xl border border-[#3E1230]/15 bg-white p-6">
+            <h2 className="font-display text-2xl sm:text-3xl font-semibold tracking-[-0.01em] text-[#3E1230] text-center">
               Ceremony Schedule · Karyakram
             </h2>
             <div className="mt-6 grid grid-cols-2 sm:grid-cols-5 gap-4">
@@ -400,10 +400,10 @@ export const EventLiveScreen: React.FC<EventLiveScreenProps> = ({
 
           {wallTab === 'blessings' ? (
             <div>
-              <h2 className="font-editorial text-2xl uppercase tracking-[0.15em] text-[#1E1E1E]">
-                Dulha-Dulhan Ke Liye Dua
+              <h2 className="font-display text-2xl font-semibold tracking-[-0.01em] text-[#3E1230]">
+                Dulha-dulhan ke liye dua
               </h2>
-              <p className="font-editorial italic text-sm text-[#3E1230]/80 mt-1 tracking-normal">
+              <p className="font-ui text-sm text-[#4A2A3E] mt-1">
                 Post your blessing — it blooms onto the live ceremony wall instantly.
               </p>
 
@@ -488,10 +488,10 @@ export const EventLiveScreen: React.FC<EventLiveScreenProps> = ({
 
                 <button
                   type="submit"
-                  className="font-ui w-full rounded-full inline-flex items-center justify-center gap-2 bg-[#181216] text-white py-2.5 text-[13px] font-medium hover:bg-[#3E1230] transition-colors cursor-pointer"
+                  className="font-ui w-full rounded-full inline-flex items-center justify-center gap-2 bg-[#3E1230] text-[#FAF6F0] py-2.5 text-sm font-medium hover:bg-[#571A43] transition-colors cursor-pointer"
                 >
                   <Send className="h-3.5 w-3.5" aria-hidden="true" />
-                  <span>Send Blessing</span>
+                  <span>Dua bhejo</span>
                 </button>
               </form>
 
@@ -510,7 +510,7 @@ export const EventLiveScreen: React.FC<EventLiveScreenProps> = ({
                       <span className="font-semibold text-[#3E1230]">
                         {wish.author}
                       </span>
-                      <span className="text-[11px] text-[#B5767C]">
+                      <span className="text-[11px] text-[#8A2E52]">
                         {wish.createdAt}
                       </span>
                     </div>
@@ -526,11 +526,11 @@ export const EventLiveScreen: React.FC<EventLiveScreenProps> = ({
             </div>
           ) : (
             <div>
-              <h2 className="font-editorial text-2xl uppercase tracking-[0.15em] text-[#1E1E1E]">
+              <h2 className="font-display text-2xl font-semibold tracking-[-0.01em] text-[#3E1230]">
                 Parivaar Guestbook
               </h2>
-              <p className="font-editorial italic text-sm text-[#3E1230]/80 mt-1 tracking-normal">
-                Sign the permanent keepsake registry so the couple knows who joined in spirit.
+              <p className="font-ui text-sm text-[#4A2A3E] mt-1">
+                Sign the keepsake registry so the couple knows who joined in spirit.
               </p>
 
               <form onSubmit={handleSubmitGuestbook} className="mt-4 space-y-3">
@@ -611,7 +611,7 @@ export const EventLiveScreen: React.FC<EventLiveScreenProps> = ({
                 )}
                 <button
                   type="submit"
-                  className="font-ui w-full rounded-full inline-flex items-center justify-center gap-2 bg-[#181216] text-white py-2.5 text-[13px] font-medium hover:bg-[#3E1230] cursor-pointer"
+                  className="font-ui w-full rounded-full inline-flex items-center justify-center gap-2 bg-[#3E1230] text-[#FAF6F0] py-2.5 text-sm font-medium hover:bg-[#571A43] cursor-pointer"
                 >
                   <Heart className="h-3.5 w-3.5" aria-hidden="true" />
                   <span>Sign Guestbook</span>
@@ -626,7 +626,7 @@ export const EventLiveScreen: React.FC<EventLiveScreenProps> = ({
                   >
                     <div className="flex justify-between text-xs font-semibold text-[#3E1230]">
                       <span>{g.familyName}</span>
-                      <span className="font-normal text-[#B5767C]">{g.signedAt}</span>
+                      <span className="font-normal text-[#8A2E52]">{g.signedAt}</span>
                     </div>
                     <p className="text-[11px] text-[#3E1230]/70">
                       {g.city} · {g.attendingFrom}

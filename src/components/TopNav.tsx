@@ -30,34 +30,33 @@ export const TopNav: React.FC<TopNavProps> = ({
   };
 
   return (
-    <header className="no-print sticky top-3 z-30 px-3 sm:px-6 pointer-events-none font-ui">
-      {/* Compact floating white pill navbar modeled after Prism reference */}
-      <div className="pointer-events-auto mx-auto max-w-4xl rounded-full bg-white border border-[#1E1E1E]/10 shadow-[0_6px_24px_rgba(20,20,20,0.06)] px-4 sm:px-5 py-1.5 flex items-center justify-between gap-4 sm:gap-6">
-        {/* Zone 1: Brand Mark + Refined Wordmark */}
+    <header className="no-print sticky top-0 z-40 w-full bg-[#FAF6F0] border-b border-[#3E1230]/12 shadow-[0_4px_18px_rgba(62,18,48,0.06)] font-ui">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 h-16 flex items-center justify-between gap-4 sm:gap-6">
+        {/* Zone 1: Brand Mark + Fraunces Wordmark */}
         <button
           type="button"
           onClick={() => handleNav('landing')}
-          className="flex items-center gap-2 text-left whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3E1230]"
+          className="flex items-center gap-2.5 text-left whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#3E1230]"
           aria-label="Yaadgaar Home"
         >
-          <YarnHeartLogo size={26} className="rounded-full" />
-          <span className="font-ui text-[16px] font-semibold tracking-[-0.02em] text-[#141414]">
+          <YarnHeartLogo size={28} className="rounded-full" />
+          <span className="font-display text-[20px] font-semibold tracking-[-0.015em] text-[#3E1230]">
             Yaadgaar
           </span>
         </button>
 
-        {/* Zone 2: Clean Single-Line Nav Links */}
+        {/* Zone 2: Clean Single-Line DM Sans Nav Links */}
         <nav
           aria-label="Primary Navigation"
-          className="hidden md:flex items-center gap-6 text-[13.5px] font-medium tracking-normal text-[#4A4A4A]"
+          className="hidden md:flex items-center gap-6 text-[15px] font-medium text-[#4A2A3E]"
         >
           <button
             type="button"
             onClick={() => handleNav('event')}
             className={`whitespace-nowrap shrink-0 py-1 transition-colors cursor-pointer ${
               activeScreen === 'event'
-                ? 'text-[#141414] font-semibold underline decoration-[#D9482B] underline-offset-4'
-                : 'hover:text-[#141414]'
+                ? 'text-[#3E1230] font-semibold underline decoration-[#F26B21] decoration-2 underline-offset-4'
+                : 'hover:text-[#3E1230]'
             }`}
           >
             {copy.live}
@@ -67,8 +66,8 @@ export const TopNav: React.FC<TopNavProps> = ({
             onClick={() => handleNav('archive')}
             className={`whitespace-nowrap shrink-0 py-1 transition-colors cursor-pointer ${
               activeScreen === 'archive'
-                ? 'text-[#141414] font-semibold underline decoration-[#D9482B] underline-offset-4'
-                : 'hover:text-[#141414]'
+                ? 'text-[#3E1230] font-semibold underline decoration-[#3E7B3A] decoration-2 underline-offset-4'
+                : 'hover:text-[#3E1230]'
             }`}
           >
             {copy.archive}
@@ -78,8 +77,8 @@ export const TopNav: React.FC<TopNavProps> = ({
             onClick={() => handleNav('album')}
             className={`whitespace-nowrap shrink-0 py-1 transition-colors cursor-pointer ${
               activeScreen === 'album'
-                ? 'text-[#141414] font-semibold underline decoration-[#D9482B] underline-offset-4'
-                : 'hover:text-[#141414]'
+                ? 'text-[#3E1230] font-semibold underline decoration-[#D9482B] decoration-2 underline-offset-4'
+                : 'hover:text-[#3E1230]'
             }`}
           >
             {copy.photoBook}
@@ -87,7 +86,7 @@ export const TopNav: React.FC<TopNavProps> = ({
           <button
             type="button"
             onClick={() => handleNav('landing', 'section-pricing')}
-            className="whitespace-nowrap shrink-0 py-1 hover:text-[#141414] transition-colors cursor-pointer"
+            className="whitespace-nowrap shrink-0 py-1 hover:text-[#3E1230] transition-colors cursor-pointer"
           >
             {copy.pricing}
           </button>
@@ -96,21 +95,21 @@ export const TopNav: React.FC<TopNavProps> = ({
             onClick={() => handleNav('dashboard')}
             className={`whitespace-nowrap shrink-0 py-1 transition-colors cursor-pointer ${
               activeScreen === 'dashboard'
-                ? 'text-[#141414] font-semibold underline decoration-[#D9482B] underline-offset-4'
-                : 'hover:text-[#141414]'
+                ? 'text-[#3E1230] font-semibold underline decoration-[#8A2E52] decoration-2 underline-offset-4'
+                : 'hover:text-[#3E1230]'
             }`}
           >
             {copy.dashboard}
           </button>
         </nav>
 
-        {/* Zone 3: Language Switch + Primary Pill CTA */}
-        <div className="flex items-center gap-2 shrink-0">
+        {/* Zone 3: Language Switch + Plum Pill CTA */}
+        <div className="flex items-center gap-2.5 shrink-0">
           <button
             type="button"
             onClick={onCycleLanguage}
             aria-label={`Switch language. Current: ${language}`}
-            className="px-2 py-1 text-[12.5px] font-medium text-[#4A4A4A] hover:text-[#141414] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+            className="px-2.5 py-1 text-[13.5px] font-medium text-[#4A2A3E] hover:text-[#3E1230] transition-colors whitespace-nowrap shrink-0 cursor-pointer"
           >
             {langButtonLabel}
           </button>
@@ -118,10 +117,10 @@ export const TopNav: React.FC<TopNavProps> = ({
           <button
             type="button"
             onClick={() => handleNav('qr')}
-            className={`hidden sm:inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-[13px] font-medium tracking-normal whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
+            className={`hidden sm:inline-flex items-center gap-1.5 rounded-full px-4 py-1.5 text-[14px] font-medium whitespace-nowrap shrink-0 transition-colors cursor-pointer ${
               activeScreen === 'qr'
-                ? 'bg-[#C9A35B] text-[#141414]'
-                : 'bg-[#141115] text-white hover:bg-[#3E1230]'
+                ? 'bg-[#C9A35B] text-[#3E1230]'
+                : 'bg-[#3E1230] text-[#FAF6F0] hover:bg-[#571A43]'
             }`}
           >
             <QrCode className="h-3.5 w-3.5" aria-hidden="true" />
@@ -131,7 +130,7 @@ export const TopNav: React.FC<TopNavProps> = ({
           <button
             type="button"
             onClick={() => setMobileOpen((prev) => !prev)}
-            className="md:hidden inline-flex h-8 w-8 items-center justify-center rounded-full border border-[#1E1E1E]/15 text-[#141414] cursor-pointer"
+            className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full border border-[#3E1230]/30 text-[#3E1230] cursor-pointer"
             aria-label={mobileOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={mobileOpen}
           >
@@ -140,11 +139,11 @@ export const TopNav: React.FC<TopNavProps> = ({
         </div>
       </div>
 
-      {/* Mobile Floating Dropdown */}
+      {/* Mobile Dropdown */}
       {mobileOpen && (
         <nav
           aria-label="Mobile Navigation"
-          className="pointer-events-auto md:hidden mx-auto mt-2 max-w-4xl rounded-2xl bg-white border border-[#1E1E1E]/12 shadow-lg p-2.5 flex flex-col gap-1 font-ui"
+          className="md:hidden border-t border-[#3E1230]/10 bg-[#FAF6F0] px-4 py-3 flex flex-col gap-1 font-ui shadow-md"
         >
           {(
             [
@@ -159,10 +158,10 @@ export const TopNav: React.FC<TopNavProps> = ({
               key={scr}
               type="button"
               onClick={() => handleNav(scr)}
-              className={`w-full text-left rounded-xl px-4 py-2 text-[13.5px] font-medium cursor-pointer ${
+              className={`w-full text-left rounded-xl px-4 py-2 text-[15px] font-medium cursor-pointer ${
                 activeScreen === scr
-                  ? 'bg-[#141115] text-white'
-                  : 'text-[#141414] hover:bg-[#FAF6F0]'
+                  ? 'bg-[#3E1230] text-[#FAF6F0]'
+                  : 'text-[#3E1230] hover:bg-[#3E1230]/8'
               }`}
             >
               {label}
@@ -171,7 +170,7 @@ export const TopNav: React.FC<TopNavProps> = ({
           <button
             type="button"
             onClick={() => handleNav('landing', 'section-pricing')}
-            className="w-full text-left rounded-xl px-4 py-2 text-[13.5px] font-medium text-[#141414] hover:bg-[#FAF6F0] cursor-pointer"
+            className="w-full text-left rounded-xl px-4 py-2 text-[15px] font-medium text-[#3E1230] hover:bg-[#3E1230]/8 cursor-pointer"
           >
             {copy.pricing}
           </button>

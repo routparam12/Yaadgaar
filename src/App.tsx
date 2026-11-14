@@ -93,59 +93,11 @@ export default function App() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#FAF6F0] text-[#3E1230] border-[6px] sm:border-[10px] border-[#E8B8BE]/45 paper-grain">
-      {/* Decorative subtle marigold & jasmine corner toran */}
-      <svg
-        className="no-print pointer-events-none fixed top-0 left-0 w-44 h-28 z-20 opacity-85 hidden lg:block"
-        viewBox="0 0 180 110"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M0 10 Q60 44, 140 8"
-          stroke="#3E7B3A"
-          strokeWidth="2"
-          fill="none"
-        />
-        {[22, 48, 74, 102, 126].map((x, idx) => (
-          <g key={x} transform={`translate(${x}, ${idx === 2 ? 26 : idx === 1 || idx === 3 ? 22 : 14})`}>
-            <circle
-              r={idx % 2 === 0 ? 7 : 5.5}
-              fill={idx % 2 === 0 ? '#F59E0B' : '#FFFFFF'}
-              stroke="#D9482B"
-              strokeWidth="1"
-            />
-          </g>
-        ))}
-      </svg>
-      <svg
-        className="no-print pointer-events-none fixed top-0 right-0 w-44 h-28 z-20 opacity-85 -scale-x-100 hidden lg:block"
-        viewBox="0 0 180 110"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M0 10 Q60 44, 140 8"
-          stroke="#3E7B3A"
-          strokeWidth="2"
-          fill="none"
-        />
-        {[22, 48, 74, 102, 126].map((x, idx) => (
-          <g key={x} transform={`translate(${x}, ${idx === 2 ? 26 : idx === 1 || idx === 3 ? 22 : 14})`}>
-            <circle
-              r={idx % 2 === 0 ? 7 : 5.5}
-              fill={idx % 2 === 0 ? '#F59E0B' : '#FFFFFF'}
-              stroke="#D9482B"
-              strokeWidth="1"
-            />
-          </g>
-        ))}
-      </svg>
-
+    <div className="relative min-h-screen bg-[#FAF6F0] text-[#4A2A3E]">
       {/* Three.js Ceremony Backdrop */}
       <MandapThreeCanvas
         mood={mood}
-        className={activeScreen === 'landing' ? '!opacity-22' : '!opacity-10'}
+        className={activeScreen === 'landing' ? '!opacity-10' : '!opacity-12'}
       />
 
       {/* Subtle gold cursor trail on desktop */}
