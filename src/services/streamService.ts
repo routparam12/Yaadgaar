@@ -7,12 +7,12 @@ import {
 } from '../types/yaadgaar';
 
 export const ASSET_IMAGES = {
-  mandapCouple: '/src/assets/images/anime_mandap_couple_1794675233709.jpg',
-  haldi: '/src/assets/images/anime_haldi_celebration_1794675234361.jpg',
-  mehendi: '/src/assets/images/anime_mehendi_garden_1794675234782.jpg',
-  sangeet: '/src/assets/images/anime_sangeet_dance_1794675235362.jpg',
-  pheras: '/src/assets/images/anime_pheras_blessing_1794675236848.jpg',
-  ganesh: '/src/assets/images/ganesha_gold_ivory_1794680087655.jpg',
+  mandapCouple: '/assets/images/anime_mandap_couple_1794675233709.jpg',
+  haldi: '/assets/images/anime_haldi_celebration_1794675234361.jpg',
+  mehendi: '/assets/images/anime_mehendi_garden_1794675234782.jpg',
+  sangeet: '/assets/images/anime_sangeet_dance_1794675235362.jpg',
+  pheras: '/assets/images/anime_pheras_blessing_1794675236848.jpg',
+  ganesh: '/assets/images/ganesha_gold_ivory_1794680087655.jpg',
 };
 
 const DEFAULT_CHAPTERS: CeremonyChapter[] = [

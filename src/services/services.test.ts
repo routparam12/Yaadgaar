@@ -77,7 +77,7 @@ test('buildNewEventRecord provides default schedule when empty', () => {
   assert.equal(evt.schedule[0].ceremony, 'Pheras');
 });
 
-test('buildAlbumSpreads generates cover, dedication, and paired photo spreads', () => {
+test('buildAlbumSpreads generates cover, dedication, and paired photo spreads in 8-chapter story order', () => {
   const photos = storageService.getInitialPhotos();
   const spreads = buildAlbumSpreads({
     coupleNames: 'Nayana & Aarav',
@@ -89,6 +89,32 @@ test('buildAlbumSpreads generates cover, dedication, and paired photo spreads', 
   assert.equal(spreads[0].kind, 'cover');
   assert.equal(spreads[1].kind, 'dedication');
   assert.equal(spreads.length, 2 + Math.ceil(photos.length / 2));
+  assert.ok(photos.length >= 30, `Expected 30+ photos, got ${photos.length}`);
+  assert.equal(
+    photos.some((p) => p.src.includes('image_8617e027')),
+    false,
+  );
+  assert.equal(new Set(photos.map((p) => p.src)).size, photos.length);
+
+  let prevStep = 1;
+  const uniqueCeremonies: string[] = [];
+  for (const photo of photos) {
+    assert.ok((photo.storyStep ?? 0) >= prevStep, 'Story chapters must stay ordered');
+    prevStep = photo.storyStep ?? prevStep;
+    if (uniqueCeremonies[uniqueCeremonies.length - 1] !== photo.ceremony) {
+      uniqueCeremonies.push(photo.ceremony);
+    }
+  }
+  assert.deepEqual(uniqueCeremonies, [
+    'First Meeting',
+    'Ring Ceremony',
+    'Haldi',
+    'Mehendi',
+    'Marriage',
+    'Hath Ganthi',
+    'Vidaai',
+    'Bride Entry in Sasural',
+  ]);
 });
 
 test('formatPlanPriceDisplay handles Self-Storage one-time and We Store It monthly/yearly', () => {

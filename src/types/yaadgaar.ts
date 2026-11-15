@@ -9,11 +9,16 @@ export type AppScreen =
 export type LanguageMode = 'hinglish' | 'en' | 'hi';
 
 export type CeremonyType =
+  | 'First Meeting'
+  | 'Ring Ceremony'
   | 'Haldi'
   | 'Mehendi'
+  | 'Marriage'
+  | 'Hath Ganthi'
   | 'Sangeet'
   | 'Pheras'
   | 'Vidaai'
+  | 'Bride Entry in Sasural'
   | 'Reception'
   | 'Roka'
   | 'Griha Pravesh'
@@ -91,6 +96,9 @@ export interface AlbumPhoto {
   ceremony: CeremonyType;
   source: StorageProviderId;
   dateTaken: string;
+  storyStep?: number;
+  storyTitle?: string;
+  storyNarrative?: string;
 }
 
 export interface AlbumSpread {

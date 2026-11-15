@@ -1,27 +1,24 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "Fraunces", Georgia, serif;
-  --font-display: "Fraunces", Georgia, serif;
-  --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-ui: "DM Sans", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-script: "Kalam", cursive;
-  --font-devanagari-accent: "Tiro Devanagari Hindi", "Noto Sans Devanagari", serif;
-  --font-devanagari: "Noto Sans Devanagari", "DM Sans", sans-serif;
+  --font-display: "Playfair Display", "Cormorant Garamond", Georgia, serif;
+  --font-serif: "Cormorant Garamond", "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ui: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-script: "Caveat", "Kalam", cursive;
+  --font-devanagari-accent: "Yatra One", "Noto Sans Devanagari", serif;
+  --font-devanagari: "Noto Sans Devanagari", "Plus Jakarta Sans", sans-serif;
 }
 
 :root {
   --yaad-plum: #3E1230;
-  --yaad-body: #4A2A3E;
-  --yaad-eyebrow: #8A2E52;
-  --yaad-charcoal: #3E1230;
+  --yaad-charcoal: #1E1E1E;
   --yaad-cream: #FAF6F0;
-  --yaad-orange: #F26B21;
-  --yaad-orange-dark: #C8431A;
-  --yaad-marigold: #F5A623;
-  --yaad-rani: #E8467C;
+  --yaad-blush: #FFF7F5;
   --yaad-gold: #C9A35B;
+  --yaad-rose: #B5767C;
   --yaad-vermilion: #D9482B;
+  --yaad-marigold: #E8A317;
   --yaad-leaf: #3E7B3A;
 }
 
@@ -33,15 +30,12 @@ html {
 
 body {
   font-family: var(--font-sans);
-  font-size: 18px;
-  line-height: 1.6;
-  color: var(--yaad-body);
   font-variant-numeric: lining-nums;
   overflow-x: hidden;
 }
 
 .font-ui {
-  font-family: var(--font-sans);
+  font-family: var(--font-ui);
 }
 
 .font-display {
@@ -50,7 +44,7 @@ body {
 }
 
 .font-editorial {
-  font-family: var(--font-display);
+  font-family: var(--font-serif);
   font-variant-numeric: lining-nums;
 }
 
@@ -60,9 +54,10 @@ body {
 }
 
 .font-invite-detail {
-  font-family: var(--font-display);
+  font-family: var(--font-serif);
   font-variant-numeric: lining-nums;
-  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
 }
 
 .font-hindi-accent {
